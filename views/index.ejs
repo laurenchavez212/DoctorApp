@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h3>Hello enter your name below</h3>
-    <h4>Currently logged in as - <%=name %></h4>
-    <form action="/createname" method="post">
-      <input type="text" name="name" >
-      <input type="submit" name="" value="">
-    </form>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body><a href="#">Doctor Login</a>
+
+  <h1>Doctors Available</h1>
+  <div class="drs">
+
+    <% for(var i = 0; i<doctor.length; i++){ %>
+      <div class="col-5 colBG">
+
+        <h3 class=""> Dr. <%= doctor[i].name %></h3>
+
+        <img src="<%= doctor[i].img_url %>" alt="doctor image">
+
+        <!-- Book Btn -->
+        <a href="">
+          <button class="book" type="button" name="button">Book</button>
+          </a>
+
+        <% } %>
+
+      </div>
+
+
+</body>
+
 </html>

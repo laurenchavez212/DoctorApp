@@ -2,7 +2,7 @@ module.exports = {
   development: {
       client: 'pg',
       connection: {
-        database: "users",
+        database: "doctor_app",
         host: "localhost"
       },
       migrations: {
