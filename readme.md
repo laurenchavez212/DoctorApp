@@ -25,20 +25,20 @@ __You should git add, commit, and push after each story is completed__
 
 __#1__
 ```
-As a user
+X As a user
 When I go to the root route
 I see a list of doctors available.
 ```
 
 __#2__
 ```
-As a User
+XAs a User
 When I click on a doctors 'Book' link
 I am redirected to /book/:doctor_id .
 ```
 __#3__
 ```
-As a User
+X As a User
 When I visit /book/:doctor_id
 I see a form for creating a new appointment.
 ```

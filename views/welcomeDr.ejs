@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Welcome Doctor</title>
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- My style sheet -->
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+
+  <h1>Welcome Dr. <%= doctor.name %></h1>
+
+  <!-- Appointments buttons -->
+  <div class="appointmentsBTN">
+    <a href="/confirmed"><button>Confirmed Appointments</button></a>
+    <a href="/unconfirmed"><button>Unconfirmed Apppointments</button></a>
+    <a href="/completedApps"><button>Completed Appointments</button></a>
+  </div>
+
+<!-- List of bookings -->
+
+  <% for(var i = 0; i<booking.length; i++){ %>
+
+      <h3 class=""><%= booking[i].name %></h3>
+      <h3 class=""><%= booking[i].date %></h3>
+      <b class=""><%= booking[i].reason %></b>
+      <p class=""><%= booking[i].details %></p>
+
+
+      <!-- View Btn -->
+      <a href="/booking/<%=booking[i].id%>">
+        <button class="" type="button">View</button>
+        </a>
+
+      <% } %>
+
+
+
+</body>
+
+</html>
