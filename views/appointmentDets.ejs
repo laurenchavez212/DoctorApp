@@ -15,33 +15,50 @@
 </head>
 
 <body>
-  <!-- Edit -->
-  <a href="/book/edit/<%=booking.id%>">Edit</a>
 
-  <h1><%=booking.name%></h1>
-  <h3><%=booking.reason%></h3>
-  <p>
-    <%=booking.details%>
-  </p>
+  <div class="banner">
+    <img class="medicalBanner" src="http://drakash.com.au/images/logo_obgyn.png" alt="">
+    <!-- Edit -->
+    <a class="rightBanner" href="/book/edit/<%=booking.id%>">Edit</a>
 
-  <p>Current booking status is <%=booking.status%></p>
+  </div>
+  <div class="patientContainer">
+<div class="patientDets">
+  <br>
+
+  <h5>Patient Name: <b><span><%=booking.name%></span></b></h5>
+
+  <h5>Reason for Visit: <b><span><%=booking.reason%></span></b></h5>
+
+  <h5>Details: <b><span><%=booking.details%></span></b></h5>
+
+  <h6>Current Status : <span><b><%=booking.status%></b></span></h6>
+
+
   <!-- Status button -->
   <% if(booking.status === 'unconfirmed') { %>
 
     <!-- Mark Confirmed -->
-    <a href="/confirmed/<%=booking.id%>"><button>Mark as Confirmed</button></a>
+    <a href="/confirmed/<%=booking.id%>"><button class="appsBtns">Mark as <b>Confirmed</b></button></a>
 
 <% } else if (booking.status === 'confirmed') { %>
 
   <!-- Mark Completed -->
-  <a href="/completed/<%=booking.id%>"><button>Mark as Completed</button></a>
+  <a href="/completed/<%=booking.id%>"><button class="appsBtns">Mark as <b>Completed</b></button></a>
 
 <% } else {  %>
   <!-- Delete -->
-  <a href="/del/<%=booking.id%>"><button>Delete</button></a>
+  <a href="/del/<%=booking.id%>"><button class="appsBtns"><b>Delete <i class="fa fa-trash-o" aria-hidden="true"></i></b></button></a>
 <% } %>
+
+</div>
+</div>
+<!-- End of grid -->
+<div class="notesContainer">
   <h2>Notes:</h2>
+
     <% for(var i = 0; i < drNotes.length; i++) {  %>
+      <div class="itemBG notes">
 
           <p>
             <%= drNotes[i].content %>
@@ -49,10 +66,11 @@
 
           <!-- Delete Comment -->
           <h6><a href="/del/note/<%= drNotes[i].id %>">
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i class=" trashcan fa fa-trash" aria-hidden="true"></i>
           </a></h6>
+          </div>
         <% } %>
-
+</div>
   <!-- Add note -->
   <form action="/notes/<%= booking.id %>" method="post">
     <textarea name="content" rows="8" cols="40" placeholder="Enter a new Note"></textarea>

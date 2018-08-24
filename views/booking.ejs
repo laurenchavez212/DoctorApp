@@ -13,15 +13,28 @@
     <link rel="stylesheet" href="/stylesheets/styles.css">
   </head>
   <body>
+    <!-- Home page link -->
+
+    <div class="banner">
+      <img class="medicalBanner" src="http://drakash.com.au/images/logo_obgyn.png" alt="">
+      <!-- Home button -->
+      <a href="/">
+        <button class="homeBtn rightBanner" type="button" name="home"> <i class="fa fa-home" aria-hidden="true"></i> </button>
+      </a>
+    </div>
+<br>
 
   <h1>Booking Dr. <%= doctor.name %></h1>
-  <br>
 
   <form class="" action="/book/<%= doctor.id %>" method="post">
     <input type="text" name="name" placeholder="Name">
+    <br>
     <input type="date" name="date" placeholder="Date">
+    <br>
     <input type="text" name="reason" placeholder="Reason">
+    <br>
     <input type="text" name="details" placeholder="Details">
+    <br>
     <input type="submit">
 
   </form>

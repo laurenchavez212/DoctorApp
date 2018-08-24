@@ -7,18 +7,17 @@ module.exports = function(app) {
   app.get('/', doctors.index);
 
   app.get('/doctor/login', doctors.drLoginPg);
-
   app.post('/register', doctors.register);
   app.post('/login', doctors.login);
-  app.get('/logout', doctors.logout);
 
   app.get('/book/:id', bookings.bookDr);
   app.post('/book/:id', bookings.addBooking);
 
-
+  app.use(authenticateUser);
 
   app.get('/booking/:id', bookings.appDets);
   app.post('/notes/:id', drNotes.postNote);
+  app.get('/del/note/:id', drNotes.delNote);
 
   app.get('/book/edit/:id', bookings.editPg);
   app.post('/book/edit/:id', bookings.editBooking);
@@ -33,8 +32,9 @@ module.exports = function(app) {
 
 }
 
+
 function authenticateUser(req, res, next) {
-  if (!req.session.user) {
+  if (!req.session.doctor_id) {
     res.redirect("/");
   } else {
     next();

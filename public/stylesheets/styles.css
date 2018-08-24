@@ -1,30 +1,117 @@
 body {
+  background-image: url('http://www.geniswomenscarepc.com/WebBackground.jpg');
+  background-size: cover;
   text-align: center;
   letter-spacing: 1;
+  font-family: 'Marcellus', serif;
+  color: #303030;
+}
+
+.banner {
+  height: 120px;
+  background-color: #fbf6f8;
+  text-align: center;
+  opacity: .9;
+}
+
+.medicalBanner {
+  height: 85%;
+  width: 400px;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+.rightBanner {
+  float: right;
+  font-size: 25px;
+  margin-right: 15px;
+  text-decoration: underline;
+  color: #d9408f;
+  margin-top: 35px;
+}
+
+.homeBtn {
+  height: 40px;
+  width: 45px;
+  border: 1px #f0c8d8 solid;
+  border-radius: 10px;
+  margin-top: 35px;
 }
 
 img {
-  height: 200px;
+  height: 250px;
   width: 250px;
   border-radius: 3px;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 25px;
-  grid-row-gap: 25px;
-  margin-left: 20px;
+  float: left;
   margin-right: 20px;
 }
 
-.grid-item {
-  border: 1px solid black;
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 20px;
+  padding-left: 5%;
+  margin-right: 5%;
+  padding-bottom: 3%;
+}
+
+.gridContainer2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 20px;
+  padding-left: 15%;
+  padding-bottom: 3%;
+}
+
+.gridContainer1 {
+  display: grid;
+  grid-template-columns: auto;
+  grid-row-gap: 20px;
+  padding-left: 35%;
+  padding-bottom: 3%;
+}
+
+.gridItem {
   padding: 20px;
   font-size: 15px;
   text-align: center;
   background-color: white;
   opacity: 0.97;
+  width: 420px;
+  border-radius: 7px;
+}
+
+.patientContainer {
+  display: grid;
+  grid-template-columns: auto;
+  margin-left: 35%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+}
+
+.patientDets {
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  opacity: 0.97;
+  width: 420px;
+  border-radius: 7px;
+}
+
+.notes {
+  text-align: left;
+  width: 500px;
+  padding: 10px;
+}
+
+.trashcan {
+  text-align: center;
+  color: #f0c8d8;
+  float: inherit;
+}
+
+.notesContainer {
+  margin-left: 30%;
 }
 
 .bookingsContainer {
@@ -36,8 +123,8 @@ img {
   margin-right: 20px;
 }
 
-.bookings{
-  border: 1px solid black;
+.bookings {
+  border: 1px solid #d9408f;
   padding: 20px;
   font-size: 15px;
   text-align: center;
@@ -50,23 +137,44 @@ img {
   width: 80px;
   border-radius: 5px;
   margin-top: 10px;
+  color: ghostwhite;
+  background-color: #d9408f;
 }
 
 h1 {
   font-size: 4.5em;
-  text-decoration: underline;
-  color: #404040;
+  color: #F8F8FF;
   margin-bottom: 10px;
   letter-spacing: 1px;
-  margin-top: 3%;
-  margin-bottom: 2%;
-  text-decoration: underline;
+  margin-bottom: 1%;
+}
+
+h2 {
+  color: grey;
+  font-size: 2em;
+  text-align: left;
+}
+
+h3{
+  font-size: 2.6em;
+  color: #F8F8FF;
+  letter-spacing: 1px;
+  margin-bottom: -2%;
+}
+
+h4 {
+  font-size: 2.5em;
+}
+
+.docNames {
+  color: #6f7471;
 }
 
 input, select, textarea {
-  height: 45px;
+  height: 40px;
   width: 430px;
-  margin-bottom: 1%;
+  margin-bottom: .5%;
+  border-radius: 5px;
 }
 
 form {
@@ -80,14 +188,30 @@ textarea {
   border: .5px lightgrey solid;
 }
 
-.notes {
-  margin-top: 10px;
+.appsBtns {
+  margin-bottom: 3%;
+  height: 45px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.inputBtn {
+  height: 45px;
+  width: 155px;
+  border-radius: 10px;
+}
+
+.bookings {
+  background-color: ghostwhite;
+  opacity: .9;
+  height: auto;
+  color: black;
 }
 
 .itemBG {
   background-color: ghostwhite;
   margin-left: 10px;
   margin-right: 10px;
-  opacity: .84;
+  opacity: .95;
   border: solid 1px #808080;
 }

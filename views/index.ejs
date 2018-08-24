@@ -10,6 +10,9 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <!-- Google Fonts Link -->
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Marcellus|Nanum+Myeongjo" rel="stylesheet">
+
   <!-- My style sheet -->
   <link rel="stylesheet" href="/stylesheets/styles.css">
 
@@ -17,19 +20,26 @@
 </head>
 
 <body>
-  <a href="/doctor/login">Doctor Login <i class="fa fa-user-md" aria-hidden="true"></i></a>
+  <div class="banner">
+    <img class="medicalBanner" src="http://drakash.com.au/images/logo_obgyn.png" alt="">
+    <a class="rightBanner" href="/doctor/login"> Doctor Login <i class="fa fa-user-md" aria-hidden="true"></i></a>
+  </div>
 
   <h1>Doctors Available</h1>
-  <div class="grid-container">
+  <div class="gridContainer">
     <% for(var i = 0; i<doctor.length; i++){ %>
 
-      <div class="grid-item itemBG">
-        <h3 class=""> Dr. <%= doctor[i].name %></h3>
+      <div class="gridItem itemBG">
+        <h3 class="docNames"> <%= doctor[i].name %>, MD</h3>
+        <br>
         <img src="<%= doctor[i].img_url %>" alt="doctor image">
+        <p>
+          <%=doctor[i].bio%>
+        </p>
         <br>
         <!-- Book Btn -->
         <a href="/book/<%=doctor[i].id%>">
-          <button class="bookBtn" type="button" name="button">Book</button>
+          <button class="bookBtn" type="button" name="button"><b>Book</b></button>
           </a>
       </div>
 

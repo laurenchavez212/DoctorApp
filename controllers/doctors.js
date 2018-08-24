@@ -28,20 +28,17 @@ module.exports = {
   },
 
   login: (req, res) => {
-    knex("doctor").where("email", req.body.email).then((results) => {
-      let doctor = results[0];
-      if (doctor.password === req.body.password) {
-        req.session.doctor_id = doctor.id
-        res.redirect("/unconfirmed")
-      } else {
-        res.redirect("/doctor/login")
-      }
-    })
-  },
+    knex('doctor').where('email', req.body.email)
+      .then((result) => {
+        let doctor = result[0];
 
-  logout: (req, res) => {
-    req.session.doctor_id = null;
-    res.redirect('/')
+        if (doctor.password === req.body.password) {
+          req.session.doctor_id = doctor.id;
+          req.session.save(() => res.redirect('/unconfirmed'))
+        } else {
+          res.redirect('/doctor/login');
+        }
+      })
   },
 
 }

@@ -15,33 +15,50 @@
 </head>
 
 <body>
+  <div class="banner">
+    <img class="medicalBanner" src="http://drakash.com.au/images/logo_obgyn.png" alt="">
+    <!-- Home button -->
+    <a href="/">
+      <button class="homeBtn rightBanner" type="button" name="home"> <i class="fa fa-home" aria-hidden="true"></i> </button>
+    </a>
+  </div>
+  <br>
 
   <h1>Welcome Dr. <%= doctor.name %></h1>
 
   <!-- Appointments buttons -->
   <div class="appointmentsBTN">
-    <a href="/confirmed"><button>Confirmed Appointments</button></a>
-    <a href="/unconfirmed"><button>Unconfirmed Apppointments</button></a>
-    <a href="/completedApps"><button>Completed Appointments</button></a>
+    <a href="/confirmed"><button class="appsBtns" >Confirmed Appointments</button></a>
+    <a href="/unconfirmed"><button class="appsBtns" >Unconfirmed Apppointments</button></a>
+    <a href="/completedApps"><button class="appsBtns" >Completed Appointments</button></a>
   </div>
 
-<!-- List of bookings -->
+  <!-- List of bookings -->
+  <%if(booking.length >= 3) {%>
+  <div class="gridContainer">
+<% }else if(booking.length == 2) {%>
+  <div class="gridContainer2">
+    <%} else {%>
+      <div class="gridContainer1">
+        <%}%>
+    <% for(var i = 0; i<booking.length; i++){ %>
+      <div class="bookings gridItem">
 
-  <% for(var i = 0; i<booking.length; i++){ %>
+        <h4 class=""><%= booking[i].name %></h4>
+        <h4 class=""><%= booking[i].date %></h4>
+        <b class=""><%= booking[i].reason %></b>
+        <p class="">
+          <%= booking[i].details %>
+        </p>
 
-      <h3 class=""><%= booking[i].name %></h3>
-      <h3 class=""><%= booking[i].date %></h3>
-      <b class=""><%= booking[i].reason %></b>
-      <p class=""><%= booking[i].details %></p>
 
-
-      <!-- View Btn -->
-      <a href="/booking/<%=booking[i].id%>">
-        <button class="" type="button">View</button>
+        <!-- View Btn -->
+        <a href="/booking/<%=booking[i].id%>">
+        <button class="bookBtn" type="button">View</button>
         </a>
-
+      </div>
       <% } %>
-
+  </div>
 
 
 </body>

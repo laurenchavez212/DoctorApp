@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
     "connect-session-knex": "^1.4.0",
     "ejs": "^2.6.1",
     "express": "^4.16.3",

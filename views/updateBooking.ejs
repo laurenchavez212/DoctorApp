@@ -14,15 +14,27 @@
   </head>
   <body>
 
+    <div class="banner">
+      <img class="medicalBanner" src="http://drakash.com.au/images/logo_obgyn.png" alt="">
+      <!-- Home button -->
+      <a href="/">
+        <button class="homeBtn rightBanner" type="button" name="home"> <i class="fa fa-home" aria-hidden="true"></i> </button>
+      </a>
+    </div>
+    <br>
+
   <h1>Edit Booking</h1>
-  <br>
 
   <form class="" action="/book/edit/<%= booking.id %>" method="post">
 
     <input type="text" name="name" value="<%= booking.name %>">
+    <br>
     <input type="date" name="date" value="<%= booking.date %>">
+    <br>
     <input type="text" name="reason" value="<%= booking.reason %>">
+    <br>
     <input type="text" name="details" value="<%= booking.details %>">
+    <br>
     <input type="submit" value="Update">
 
   </form>
