@@ -97,6 +97,7 @@ module.exports = {
       .then((drResults) => {
         return knex('booking')
           .where('status', 'confirmed')
+          .where('doctor_id', req.session.doctor_id)
           .then((bookingResults) => {
             res.render('welcomeDr', {
               doctor: drResults[0],
@@ -112,6 +113,7 @@ module.exports = {
       .then((drResults) => {
         return knex('booking')
           .where('status', 'unconfirmed')
+          .where('doctor_id', req.session.doctor_id)
           .then((bookingResults) => {
             res.render('welcomeDr', {
               doctor: drResults[0],
@@ -127,6 +129,7 @@ module.exports = {
       .then((drResults) => {
         return knex('booking')
           .where('status', 'completed')
+          .where('doctor_id', req.session.doctor_id)
           .then((bookingResults) => {
             res.render('welcomeDr', {
               doctor: drResults[0],
