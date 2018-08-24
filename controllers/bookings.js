@@ -4,9 +4,11 @@ module.exports = {
 
   bookDr: (req, res) => {
     knex('doctor').where('id', req.params.id)
-    .then((results) => {
-      res.render('booking', {doctor: results[0]})
-    })
+      .then((results) => {
+        res.render('booking', {
+          doctor: results[0]
+        })
+      })
   },
 
   addBooking: (req, res) => {
@@ -60,7 +62,7 @@ module.exports = {
 
   markCompleted: (req, res) => {
     knex('booking')
-    .where('id', req.params.id)
+      .where('id', req.params.id)
       .update({
         status: 'completed',
       })
@@ -71,7 +73,7 @@ module.exports = {
 
   markConfirmed: (req, res) => {
     knex('booking')
-    .where('id', req.params.id)
+      .where('id', req.params.id)
       .update({
         status: 'confirmed',
       })
@@ -82,11 +84,11 @@ module.exports = {
 
   delBooking: (req, res) => {
     knex("booking")
-    .del()
-    .where('id', req.params.id)
-    .then(() => {
-      res.redirect("/")
-    })
+      .del()
+      .where('id', req.params.id)
+      .then(() => {
+        res.redirect("/")
+      })
   },
 
   confirmedApps: (req, res) => {

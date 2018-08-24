@@ -35,30 +35,30 @@
 
   <!-- List of bookings -->
   <%if(booking.length >= 3) {%>
-  <div class="gridContainer">
-<% }else if(booking.length == 2) {%>
-  <div class="gridContainer2">
-    <%} else {%>
-      <div class="gridContainer1">
-        <%}%>
-    <% for(var i = 0; i<booking.length; i++){ %>
-      <div class="bookings gridItem">
+    <div class="gridContainer">
+      <% }else if(booking.length == 2) {%>
+        <div class="gridContainer2">
+          <%} else {%>
+            <div class="gridContainer1">
+              <%}%>
+                <% for(var i = 0; i<booking.length; i++){ %>
+                  <div class="bookings gridItem">
 
-        <h4 class=""><%= booking[i].name %></h4>
-        <h4 class=""><%= booking[i].date %></h4>
-        <b class=""><%= booking[i].reason %></b>
-        <p class="">
-          <%= booking[i].details %>
-        </p>
+                    <h4 class=""><%= booking[i].name %></h4>
+                    <h4 class=""><%= booking[i].date %></h4>
+                    <b class=""><%= booking[i].reason %></b>
+                    <p class="">
+                      <%= booking[i].details %>
+                    </p>
 
 
-        <!-- View Btn -->
-        <a href="/booking/<%=booking[i].id%>">
+                    <!-- View Btn -->
+                    <a href="/booking/<%=booking[i].id%>">
         <button class="bookBtn" type="button">View</button>
         </a>
-      </div>
-      <% } %>
-  </div>
+                  </div>
+                  <% } %>
+            </div>
 
 
 </body>

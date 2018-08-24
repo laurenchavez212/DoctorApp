@@ -14,11 +14,11 @@ module.exports = {
 
   delNote: (req, res) => {
     knex("drNotes")
-    .del()
-    .where('id', req.params.id)
-    .then(() => {
-      res.redirect("back")
-    })
+      .del()
+      .where('id', req.params.id)
+      .then(() => {
+        res.redirect("back")
+      })
   },
 
 }
